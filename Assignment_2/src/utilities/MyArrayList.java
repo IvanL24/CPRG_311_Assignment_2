@@ -25,12 +25,12 @@ public class MyArrayList<E> implements ListADT<E>{
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.size;
 	}
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub.
+		this.size = 0;
 		
 	}
 
@@ -209,13 +209,27 @@ public class MyArrayList<E> implements ListADT<E>{
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
-		return false;
+		return size() == 0;
 	}
 
 	@Override
 	public boolean contains(E toFind) throws NullPointerException {
-		// TODO Auto-generated method stub
-		return false;
+		if(toFind == null) {
+			throw new NullPointerException();
+		}
+		if(size() == 0) {
+			throw new NullPointerException();
+		}
+		
+		boolean found = false;
+		
+		for(int i=0; i<size() && !found; i++) {
+			if(this.array[i].equals(toFind)) {
+				found = true;
+				break;
+			}
+		}
+		return found;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -233,6 +247,7 @@ public class MyArrayList<E> implements ListADT<E>{
 	@Override
 	public Object[] toArray() {
 //		Object[] toHold = (E[]) Array.newInstance(array[0].getClass(), this.size);
+		@SuppressWarnings("unchecked")
 		Object[] toHold = (E[]) new Object[this.size];
 		System.arraycopy(array, 0, toHold, 0, this.size);
 
@@ -252,6 +267,7 @@ public class MyArrayList<E> implements ListADT<E>{
 		private int pos;
 		private E[] copy;
 		
+		@SuppressWarnings("unchecked")
 		public ArrayBasedIterator() {
 			copy = (E[]) new Object[size];
 			System.arraycopy(array, 0, copy, 0, size);

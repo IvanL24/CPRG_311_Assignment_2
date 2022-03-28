@@ -4,6 +4,10 @@ import java.util.NoSuchElementException;
 
 public class MyQueue<E> implements QueueADT<E> {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -568716973545361617L;
 	//attributes
 	MyDLL<E> list = new MyDLL<>();
 

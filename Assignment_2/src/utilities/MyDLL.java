@@ -159,7 +159,6 @@ public class MyDLL<E> implements ListADT<E> {
 		
 		if(index == 0) {
 			head = head.next;
-			head.previous = null;
 			toRemove.next = null;
 		}
 		else if (index == size() -1) {

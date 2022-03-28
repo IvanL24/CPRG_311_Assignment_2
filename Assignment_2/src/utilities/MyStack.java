@@ -1,7 +1,5 @@
 package utilities;
 
-import java.util.NoSuchElementException;
-
 @SuppressWarnings("serial")
 public class MyStack<E> implements StackADT<E>  {
 

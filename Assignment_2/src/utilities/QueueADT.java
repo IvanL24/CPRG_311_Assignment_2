@@ -1,8 +1,7 @@
 package utilities;
 
-import java.io.Serializable;
-
-import java.util.NoSuchElementException;
+import exceptions.EmptyQueueException;
+import java.io.*;
 
 /**
  * This is the professional Queue Interface for Advanced Object 
@@ -36,7 +35,7 @@ public interface QueueADT<E> extends Serializable
 	 * @return the first item in the Queue.
 	 * @throws EmptyQueueException raised when the queue's length is zero (0).
 	 */
-	public E dequeue() throws NoSuchElementException;
+	public E dequeue() throws EmptyQueueException;
 	
 	/**
 	 * Peek provides a reference to the first item in the queue without
@@ -45,7 +44,7 @@ public interface QueueADT<E> extends Serializable
 	 * @return the first item in the queue.
 	 * @throws EmptyQueueException raised when the queue's length is zero (0).
 	 */
-	public E peek() throws NoSuchElementException;
+	public E peek() throws EmptyQueueException;
 	
 	/**
 	 * dequeueAll removes all items in the queue.
