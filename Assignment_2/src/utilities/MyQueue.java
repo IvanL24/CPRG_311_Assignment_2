@@ -93,4 +93,9 @@ public class MyQueue<E> implements QueueADT<E> {
 		return false;
 	}
 
+	public static void add(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
